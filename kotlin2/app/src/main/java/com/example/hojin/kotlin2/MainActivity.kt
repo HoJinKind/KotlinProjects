@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         estimatePi().execute(10)
     }
-    class estimatePi : AsyncTask<Int, Unit, String>() {
+    class estimatePi : AsyncTask<Int?, Unit, String>() {
 
         override protected fun doInBackground(vararg params: Int?): String {
             var a :Int? = params!![0]
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         override fun onPostExecute(result: String?) {
             super.onPostExecute(result)
 
-            Log.i("beye","hi")
+            Log.i("beye",result )
         }
     }
 }
