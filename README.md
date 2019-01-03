@@ -7,4 +7,4 @@ These are my kotlin project which I have been working on
 use of basic functions, on click listener. Wanted o set on click function in XML, triggering a function in activity,  but failed.
 
  ## kotlin2
-using AsyncTask t allow multithreading. Also configure tint of image backgrond effect
+using AsyncTask to allow multithreading. Also configure tint of image backgrond effect
