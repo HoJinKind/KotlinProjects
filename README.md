@@ -8,3 +8,7 @@ use of basic functions, on click listener. Wanted to set on click function in XM
 
  ## kotlin2
 using AsyncTask to allow multithreading. Also configure tint of image backgrond effect
+  
+  ## kotlin3
+  
+  using FireBase ML kit, create a QR scanner using kotlin. Can be effective for transport system ,where scanning of QR code is done
