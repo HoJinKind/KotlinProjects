@@ -46,7 +46,11 @@ class MainActivityUI : AnkoComponent<MainActivity> {
                     Log.i("this is UI",editText1.text.toString())
 
                     var returnVar=ui.owner.QueryYahoo(ui,editText1.text.toString())
-                    tv.text = String.format("The temperature at %s is %s  Kelvin", editText1.text.toString(),returnVar.toString())
+                    val inCelcius = returnVar.toDouble()-273.15
+                    tv.text = String.format("The temperature at %s is %s  Kelvin,\n%s Celcius",
+                            editText1.text.toString(),
+                            returnVar,
+                            inCelcius.toString())
 
                 }
             }.lparams{

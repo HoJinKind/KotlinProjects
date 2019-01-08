@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
         var finalString = MyAsyncTask().execute(urlTemplate).get()
 
-        return finalString[0]
+        return finalString[1]
     }
     class MyAsyncTask: AsyncTask<String?, Unit, List<String>>() {
         override protected fun doInBackground(vararg p0: String?): List<String> {
@@ -51,9 +51,10 @@ class MainActivity : AppCompatActivity() {
                 val sys1 = json.getJSONObject("sys")
                 val sunrise = sys1.getString("sunrise")
                 val coord = json.getJSONObject("coord")
-                val long = coord.getString("lon")
+                val mainData = json.getJSONObject("main")
+                val temperature = mainData.getString("temp")
                 val lat = coord.getString("lat")
-                ls1 = listOf<String>(sunrise, long, lat)
+                ls1 = listOf<String>(sunrise, temperature, lat)
                 Log.i("success", sunrise)
             }
             catch (ex:Exception){
