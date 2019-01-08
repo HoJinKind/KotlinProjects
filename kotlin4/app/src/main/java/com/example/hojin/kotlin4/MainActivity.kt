@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
         var finalString = MyAsyncTask().execute(urlTemplate).get()
 
-        return finalString[1]
+        return finalString[0]
     }
     class MyAsyncTask: AsyncTask<String?, Unit, List<String>>() {
         override protected fun doInBackground(vararg p0: String?): List<String> {

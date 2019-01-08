@@ -39,21 +39,22 @@ class MainActivityUI : AnkoComponent<MainActivity> {
 
                 }
             button{
-                setText("ok")
+                setText("search")
                 id = ID_button1
                 width = wrapContent
                 setOnClickListener{
                     Log.i("this is UI",editText1.text.toString())
 
                     var returnVar=ui.owner.QueryYahoo(ui,editText1.text.toString())
-                    tv.text = returnVar.toString()
+                    tv.text = String.format("The temperature at %s is %s  Kelvin", editText1.text.toString(),returnVar.toString())
+
                 }
             }.lparams{
                 below(ID_textview)
 
             }
             button{
-                setText("ok")
+                setText("just a button")
                 id = ID_button2
                 width = wrapContent
             }.lparams{
