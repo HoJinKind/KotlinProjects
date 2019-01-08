@@ -12,3 +12,5 @@ using AsyncTask to allow multithreading. Also configure tint of image backgrond 
   ## kotlin3
   
   using FireBase ML kit, create a QR scanner using kotlin. Can be effective for transport supply chain system ,where scanning of QR code is done
+  ## kotlin4
+  using AsyncTask , along with weatherAPI, to call longtitude, latitude, sunrise timing of a city.
