@@ -28,29 +28,38 @@ class MainActivity : AppCompatActivity() {
     fun QueryYahoo(ui: AnkoContext<MainActivity>, city: CharSequence?): String {
         Log.i("this is main",String.format("http://api.openweathermap.org/data/2.5/weather?q=%s&appid=c151c3e1a3f3a69e94d9f40d5a08a278", city))
         var urlTemplate = String.format("http://api.openweathermap.org/data/2.5/weather?q=%s&appid=c151c3e1a3f3a69e94d9f40d5a08a278", city)
+
+
+
         var finalString = MyAsyncTask().execute(urlTemplate).get()
+
         return finalString[1]
     }
     class MyAsyncTask: AsyncTask<String?, Unit, List<String>>() {
         override protected fun doInBackground(vararg p0: String?): List<String> {
 
                 val url = URL(p0[0])
+            var ls1= listOf<String>("","","")
             Log.i("this is main", url.toString())
+            try {
+                val urlConnect = url.openConnection() as HttpURLConnection
+                urlConnect.connectTimeout = 7000
+                var inString = ConvertStreamToString(urlConnect.inputStream)
 
-            val urlConnect = url.openConnection() as HttpURLConnection
-            urlConnect.connectTimeout=7000
-            var inString =  ConvertStreamToString(urlConnect.inputStream)
-
-            Log.i("success",inString)
-            var json = JSONObject(inString)
-            val sys1 = json.getJSONObject("sys")
-            val sunrise = sys1.getString("sunrise")
-            val coord = json.getJSONObject("coord")
-            val long = coord.getString("lon")
-            val lat = coord.getString("lat")
-            val lis1 = listOf<String>(sunrise,long,lat)
-            Log.i("success",sunrise)
-            return lis1
+                Log.i("success", inString)
+                var json = JSONObject(inString)
+                val sys1 = json.getJSONObject("sys")
+                val sunrise = sys1.getString("sunrise")
+                val coord = json.getJSONObject("coord")
+                val long = coord.getString("lon")
+                val lat = coord.getString("lat")
+                ls1 = listOf<String>(sunrise, long, lat)
+                Log.i("success", sunrise)
+            }
+            catch (ex:Exception){
+                ls1= listOf<String>("incorrect","incorrect","incorrect")
+            }
+            return ls1
 
         }
 
