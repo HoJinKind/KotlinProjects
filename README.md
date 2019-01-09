@@ -16,4 +16,4 @@ using AsyncTask to allow multithreading. Also configure tint of image backgrond 
   using AsyncTask , along with weatherAPI, to call longtitude, latitude, sunrise timing of a city.
   
 ## kotlin5 
-Loading  with customisable gif image, for a more professional feel 
+Loading  with customisable gif image using Dialog, for a more professional feel 
