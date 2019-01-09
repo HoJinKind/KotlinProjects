@@ -6,7 +6,6 @@ import android.system.Os.bind
 import android.util.Log
 import android.view.Window;
 import android.widget.ImageView;
-
 import android.view.View;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
