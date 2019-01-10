@@ -19,3 +19,5 @@ using AsyncTask to allow multithreading. Also configure tint of image backgrond 
 Loading  with customisable gif image using Dialog, for a more professional feel 
 ## kotlin6
 kotlin6: UI, achieve ability to move seekbar using buttons, failed on rangebar. can be used as UI for tracker , for example delivery app
+## kotlin7
+kotlin7: firebaseAuth. create login using firebase auth. able to get user username, as well as log out
